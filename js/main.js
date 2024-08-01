@@ -11,9 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		const updatePrice = () => {
             const count = parseInt(countElement.textContent);
             const totalPrice = basePrice * count;
-			console.log(basePrice);
-			console.log(count);
             priceElement.textContent = totalPrice;
+			updateTotalSum();
         };
 
         plusButton.addEventListener('click', () => {
@@ -30,4 +29,40 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
         });
     });
+
+	
+
+	const updateSumOrder = () => {
+		const sumOrderElement = document.querySelector('.cost-all-items');
+		let totalSum = 0;
+
+		itemsCart.forEach(itemCart => {
+			const priceItem = parseInt(itemCart.querySelector('.cart-price').textContent);
+
+			totalSum = totalSum + priceItem;
+		})
+
+		sumOrderElement.textContent = totalSum;
+	}
+
+
+	const updateTotalSum = () => {
+		updateSumOrder();
+		const sumItems = parseInt(document.querySelector('.cost-all-items'));
+		const delyveryCost = parseInt(document.querySelector('.cost-delyvery'));
+		const duesCost = parseInt(document.querySelector('.cost-dues'));
+
+		console.log(sumItems);
+		console.log(delyveryCost);
+		console.log(duesCost);
+
+		let totalSum = sumItems + delyveryCost + duesCost;
+
+		const totalSumElement = document.querySelector('.order-sum__value');
+		totalSumElement.textContent = totalSum;
+	}
+
+	updateTotalSum();
+
 });
+
