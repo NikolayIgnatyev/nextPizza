@@ -19,13 +19,24 @@ document.addEventListener('DOMContentLoaded', () => {
             let value = parseInt(countElement.textContent);
 			countElement.textContent = value + 1;
 			updatePrice();
+			if(minusButton.classList.contains('btn-numeric-disable')){
+				minusButton.classList.remove('btn-numeric-disable');
+			}
         });
 
         minusButton.addEventListener('click', () => {
             let value = parseInt(countElement.textContent);
-			if (value > 0){
+			if (value > 1){
 				countElement.textContent = value - 1;
 				updatePrice();
+				if(value >= 1){
+					if(minusButton.classList.contains('btn-numeric-disable')){
+						minusButton.classList.remove('btn-numeric-disable');
+					}
+				}
+			}
+			if (value == 1){
+				minusButton.classList.add('btn-numeric-disable');
 			}
         });
     });
@@ -63,6 +74,53 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	updateTotalSum();
+
+	const selectSelected = document.querySelector(".select-selected");
+	const selectItems = document.querySelectorAll(".select-items div");
+	const selectItemsGroup = document.querySelector(".select-items");
+
+	
+	
+	selectSelected.addEventListener("click", function() {
+		if(this.nextElementSibling.classList.contains("select-hide")){
+			selectItemsGroup.classList.add('animation-open');
+			setTimeout(() => {
+				this.nextElementSibling.classList.remove("select-hide")
+			}, 500)
+			
+		}
+		else{
+			selectItemsGroup.classList.add('animation-close');
+			setTimeout(() => {
+				this.nextElementSibling.classList.add("select-hide")
+				selectItemsGroup.classList.remove('animation-close');
+				selectItemsGroup.classList.remove('animation-open');
+			}, 500)
+		}
+	  
+	});
+	
+	for (const item of selectItems) {
+	  item.addEventListener("click", function() {
+		const text = this.innerText;
+		selectSelected.innerText = text;
+		this.parentElement.classList.add("select-hide");
+		console.log(123213);
+	  });
+	}
+	
+	document.addEventListener("click", function(e) {
+	  if (!e.target.matches('.select-selected')) {
+		const dropdowns = document.getElementsByClassName("select-items");
+		for (const dropdown of dropdowns) {
+		  if (!dropdown.classList.contains('select-hide')) {
+			dropdown.classList.add('select-hide');		
+		  }
+		}
+	  }
+	});
+
+	selectItemsGroup.classList.add('select-hide');
 
 });
 

@@ -35,166 +35,203 @@
         </div>
       </div>
     </header>
-    <section class="confirm-order">
-      <div class="container">
-        <div class="confirm-order__container">
-          <h2 class="title-section">Оформление заказа</h2>
-          <div class="confirm-order__content-block">
-            <div class="order-points">
-              <div class="card order-cart">
-                <div class="cart__head card__head-border">
-                  <h3 class="cart-title">1. Корзина</h3>
-                  <a href="#" class="cart-clear">
-                    <div class="cart-clear-icon">
-                      <img src="./img/svg/bascket.svg" alt="Корзина">
-                    </div>
-                    <p class="cart-clear-text">Очистить корзину</p>
-                  </a>
-
-                </div>
-                <div class="cart-item">
-                  <div class="cart-item-icon">
-                    <img src="./img/pizza.png" alt="Пицца">
+    <main>
+      <section class="confirm-order">
+        <div class="container">
+          <div class="confirm-order__container">
+            <h2 class="title-section">Оформление заказа</h2>
+            <div class="confirm-order__content-block">
+              <div class="order-points">
+                <div class="card order-cart">
+                  <div class="card__head card__head-border">
+                    <h3 class="card-title">1. Корзина</h3>
+                    <button class="cart-clear">
+                      <div class="cart-clear-icon">
+                        <img src="./img/svg/bascket.svg" alt="Корзина">
+                      </div>
+                      <p class="cart-clear-text">Очистить корзину</p>
+                    </button>
                   </div>
-                  <div class="cart-item-info">
-                    <div class="info-text">
-                      <p class="info-text-title">Чизбургер-пицца</p>
-                      <p class="info-text-subtitle">Средняя 30 см, традиционное тесто</p>
+                  <div class="cart-item">
+                    <div class="cart-item-icon">
+                      <img src="./img/pizza.png" alt="Пицца">
                     </div>
-                    <div class="item-price" data-base-price="965">
-                      <p class="cart-price">965</p>
-                      <span>₽</span>
-                    </div>
-                    <div class="cart-numeric">
-                      <button class="btn btn-numeric btn-minus">
-                        <img src="./img/svg/minus.svg" alt="Минус">
-                      </button>
-                      <span class="cart-item-count">1</span>
-                      <button class="btn btn-numeric btn-plus">
-                        <img src="./img/svg/plus.svg" alt="Плюс">
-                      </button>
-                    </div>
-                  </div>
-                </div>
-                <div class="cart-item">
-                  <div class="cart-item-icon">
-                    <img src="./img/pizza.png" alt="Пицца">
-                  </div>
-                  <div class="cart-item-info">
-                    <div class="info-text">
-                      <p class="info-text-title">Диабло</p>
-                      <p class="info-text-subtitle">Большая 35 см, традиционное тесто + моцарелла, шампиньоны</p>
-                    </div>
-                    <div class="item-price" data-base-price="1280">
-                      <p class="cart-price">1280</p>
-                      <span>₽</span>
-                    </div>
-                    <div class="cart-numeric">
-                      <button class="btn btn-numeric btn-minus">
-                        <svg width="11" height="2" viewBox="0 0 11 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M9.28683 1L1.42969 1" stroke="#FE5F00" stroke-width="1.5" stroke-linecap="round" />
-                        </svg>
-                      </button>
-                      <span class="cart-item-count">1</span>
-                      <button class="btn btn-numeric btn-plus">
-                        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div class="cart-item-info">
+                      <div class="info-text">
+                        <p class="info-text-title">Чизбургер-пицца</p>
+                        <p class="info-text-subtitle">Средняя 30 см, традиционное тесто</p>
+                      </div>
+                      <div class="item-price" data-base-price="965">
+                        <p class="cart-price">965</p>
+                        <span>₽</span>
+                      </div>
+                      <div class="cart-numeric">
+                        <button class="btn btn-numeric btn-minus btn-numeric-disable">
+                          <svg width="11" height="2" viewBox="0 0 11 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.28683 1L1.42969 1" stroke="#FE5F00" stroke-width="1.5" stroke-linecap="round" />
+                          </svg>
+                        </button>
+                        <span class="cart-item-count">1</span>
+                        <button class="btn btn-numeric btn-plus">
+                          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
                           <path
                             d="M9.32502 4.46436H5.88115V1.25007C5.88115 1.10799 5.82067 0.971729 5.71303 0.871263C5.60539 0.770797 5.4594 0.714355 5.30717 0.714355C5.15494 0.714355 5.00894 0.770797 4.9013 0.871263C4.79366 0.971729 4.73319 1.10799 4.73319 1.25007V4.46436H1.28931C1.13708 4.46436 0.991089 4.5208 0.883447 4.62126C0.775805 4.72173 0.715332 4.85799 0.715332 5.00007C0.715332 5.14215 0.775805 5.27841 0.883447 5.37888C0.991089 5.47934 1.13708 5.53578 1.28931 5.53578H4.73319V8.75007C4.73319 8.89215 4.79366 9.02841 4.9013 9.12888C5.00894 9.22934 5.15494 9.28579 5.30717 9.28579C5.4594 9.28579 5.60539 9.22934 5.71303 9.12888C5.82067 9.02841 5.88115 8.89215 5.88115 8.75007V5.53578H9.32502C9.47725 5.53578 9.62324 5.47934 9.73089 5.37888C9.83853 5.27841 9.899 5.14215 9.899 5.00007C9.899 4.85799 9.83853 4.72173 9.73089 4.62126C9.62324 4.5208 9.47725 4.46436 9.32502 4.46436Z"
                             fill="#FE5F00" />
                         </svg>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card person-data">
-                <div class="cart__head card__head-border">
-                  <h3 class="cart-title">2. Персональная информация</h3>
-                  <span class="head-border"></span>
-                </div>
-                <form class="input-block">
-                  <div class="input-item">
-                    <p class="input-title">Имя</p>
-                    <input type="text" class="input-pers-data">
-                  </div>
-                  <div class="input-item">
-                    <p class="input-title">Фамилия</p>
-                    <input type="text" class="input-pers-data">
-                  </div>
-                  <div class="input-item">
-                    <p class="input-title">E-Mail</p>
-                    <input type="email" class="input-pers-data">
-                  </div>
-                  <div class="input-item">
-                    <p class="input-title">Телефон</p>
-                    <input type="tel" class="input-pers-data">
-                  </div>
-                </form>
-              </div>
-              <div class="adress-delyvery">
-                
-              </div>
-            </div>
-            <div class="order-summary">
-              <div class="card order-card">
-                <div class="order-summary__head card__head-border-summary">
-                  <h3 class="order-sum-text">Итого:</h3>
-                  <div class="order-sum">
-                    <p class="order-sum__value">0</p>
-                    <span class="currency">₽</span>
-                  </div>
-                </div>
-                <div class="order-summary__price-list">
-                  <div class="price-list__item">
-                    <div class="price-list-icon">
-                      <img src="./img/svg/box.svg" alt="Коробка">
-                    </div>
-                    <div class="price-list__content">
-                      <p class="price-list-text">Стоимость товаров:</p>
-                      <span class="price-list__border-bottom"></span>
-                      <div class="price-list-cost">
-                        <p class="price-list-cost__value cost-all-items">0</p>
-                        <span class="price-list-cost__currency">₽</span>
+                        </button>
                       </div>
                     </div>
                   </div>
-                  <div class="price-list__item">
-                    <div class="price-list-icon">
-                      <img src="./img/svg/box.svg" alt="Коробка">
+                  <div class="cart-item">
+                    <div class="cart-item-icon">
+                      <img src="./img/pizza.png" alt="Пицца">
                     </div>
-                    <div class="price-list__content">
-                      <p class="price-list-text">Налоги:</p>
-                      <span class="price-list__border-bottom"></span>
-                      <div class="price-list-cost">
-                        <p class="price-list-cost__value cost-dues">240</p>
-                        <span class="price-list-cost__currency">₽</span>
+                    <div class="cart-item-info">
+                      <div class="info-text">
+                        <p class="info-text-title">Диабло</p>
+                        <p class="info-text-subtitle">Большая 35 см, традиционное тесто + моцарелла, шампиньоны</p>
                       </div>
-                    </div>
-                  </div>
-                  <div class="price-list__item">
-                    <div class="price-list-icon">
-                      <img src="./img/svg/box.svg" alt="Коробка">
-                    </div>
-                    <div class="price-list__content">
-                      <p class="price-list-text">Доставка:</p>
-                      <span class="price-list__border-bottom"></span>
-                      <div class="price-list-cost">
-                        <p class="price-list-cost__value cost-delyvery">120</p>
-                        <span class="price-list-cost__currency">₽</span>
+                      <div class="item-price" data-base-price="1280">
+                        <p class="cart-price">1280</p>
+                        <span>₽</span>
+                      </div>
+                      <div class="cart-numeric">
+                        <button class="btn btn-numeric btn-minus btn-numeric-disable">
+                          <svg width="11" height="2" viewBox="0 0 11 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.28683 1L1.42969 1" stroke="#FE5F00" stroke-width="1.5" stroke-linecap="round" />
+                          </svg>
+                        </button>
+                        <span class="cart-item-count">1</span>
+                        <button class="btn btn-numeric btn-plus">
+                          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M9.32502 4.46436H5.88115V1.25007C5.88115 1.10799 5.82067 0.971729 5.71303 0.871263C5.60539 0.770797 5.4594 0.714355 5.30717 0.714355C5.15494 0.714355 5.00894 0.770797 4.9013 0.871263C4.79366 0.971729 4.73319 1.10799 4.73319 1.25007V4.46436H1.28931C1.13708 4.46436 0.991089 4.5208 0.883447 4.62126C0.775805 4.72173 0.715332 4.85799 0.715332 5.00007C0.715332 5.14215 0.775805 5.27841 0.883447 5.37888C0.991089 5.47934 1.13708 5.53578 1.28931 5.53578H4.73319V8.75007C4.73319 8.89215 4.79366 9.02841 4.9013 9.12888C5.00894 9.22934 5.15494 9.28579 5.30717 9.28579C5.4594 9.28579 5.60539 9.22934 5.71303 9.12888C5.82067 9.02841 5.88115 8.89215 5.88115 8.75007V5.53578H9.32502C9.47725 5.53578 9.62324 5.47934 9.73089 5.37888C9.83853 5.27841 9.899 5.14215 9.899 5.00007C9.899 4.85799 9.83853 4.72173 9.73089 4.62126C9.62324 4.5208 9.47725 4.46436 9.32502 4.46436Z"
+                              fill="#FE5F00" />
+                          </svg>
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="submit-order submit-order__border-top">
-                  <a href="#" class="promo-link">У меня есть промокод</a>
-                  <button class="btn btn-submit-order">Перейти к оплате</button>
+                <div class="card person-data">
+                  <div class="card__head card__head-border">
+                    <h3 class="card-title">2. Персональная информация</h3>
+                    <span class="head-border"></span>
+                  </div>
+                  <form class="input-block">
+                    <div class="input-item">
+                      <p class="input-title">Имя</p>
+                      <input type="text" class="input-pers-data">
+                    </div>
+                    <div class="input-item">
+                      <p class="input-title">Фамилия</p>
+                      <input type="text" class="input-pers-data">
+                    </div>
+                    <div class="input-item">
+                      <p class="input-title">E-Mail</p>
+                      <input type="email" class="input-pers-data">
+                    </div>
+                    <div class="input-item">
+                      <p class="input-title">Телефон</p>
+                      <input type="tel" class="input-pers-data">
+                    </div>
+                  </form>
+                </div>
+                <div class="adress-delyvery">
+                  <div class="card card__adress-delyvery">
+                    <div class="card__head card__head-border">
+                      <h3 class="card-title">3. Адрес доставки</h3>
+                    </div>
+                    <div class="adress-delyvery__content">
+                      <div class="adress-delyvery-select">
+                        <p class="adress-title">Введите адрес</p>
+                        <div class="adress-delyvery__combo-box">
+                          <div class="select-selected">Москва, ул. Мира 10</div>
+                          <div class="select-items">
+                            <div>Москва, ул. Мира 11</div>
+                            <div>Москва, ул. Мира 12</div>
+                            <div>Москва, ул. Мира 13</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="adress-delyvery__comment">
+                        <p class="comment-title">Комментарий к заказу</p>
+                        <textarea class="comment-text" rows="6" placeholder="Укажите тут дополнительную информацию для курьера" type="text"></textarea>
+                      </div>
+                      <div class="adress-delyvery__time">
+                        <p class="time-title">Время доставки</p>
+                        <div class="time-block">
+                          <div class="time-icon">
+                            <img src="./img/svg/time-icon.svg" alt="Время">
+                          </div>
+                          <p class="time-text">Доставка в 11:00</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="order-summary">
+                <div class="card order-card">
+                  <div class="order-summary__head card__head-border-summary">
+                    <h3 class="order-sum-text">Итого:</h3>
+                    <div class="order-sum">
+                      <p class="order-sum__value">0</p>
+                      <span class="currency">₽</span>
+                    </div>
+                  </div>
+                  <div class="order-summary__price-list">
+                    <div class="price-list__item">
+                      <div class="price-list-icon">
+                        <img src="./img/svg/box.svg" alt="Коробка">
+                      </div>
+                      <div class="price-list__content">
+                        <p class="price-list-text">Стоимость товаров:</p>
+                        <span class="price-list__border-bottom"></span>
+                        <div class="price-list-cost">
+                          <p class="price-list-cost__value cost-all-items">0</p>
+                          <span class="price-list-cost__currency">₽</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price-list__item">
+                      <div class="price-list-icon">
+                      </div>
+                      <div class="price-list__content">
+                        <p class="price-list-text">Налоги:</p>
+                        <span class="price-list__border-bottom"></span>
+                        <div class="price-list-cost">
+                          <p class="price-list-cost__value cost-dues">240</p>
+                          <span class="price-list-cost__currency">₽</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="price-list__item">
+                      <div class="price-list-icon">
+                      </div>
+                      <div class="price-list__content">
+                        <p class="price-list-text">Доставка:</p>
+                        <span class="price-list__border-bottom"></span>
+                        <div class="price-list-cost">
+                          <p class="price-list-cost__value cost-delyvery">120</p>
+                          <span class="price-list-cost__currency">₽</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="submit-order submit-order__border-top">
+                    <a href="#" class="promo-link">У меня есть промокод</a>
+                    <button class="btn btn-submit-order">Перейти к оплате</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
   </div>
 
 
