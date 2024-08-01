@@ -48,15 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const updateTotalSum = () => {
 		updateSumOrder();
-		const sumItems = parseInt(document.querySelector('.cost-all-items'));
-		const delyveryCost = parseInt(document.querySelector('.cost-delyvery'));
-		const duesCost = parseInt(document.querySelector('.cost-dues'));
+		const sumItems = document.querySelector('.cost-all-items').textContent;
+		const delyveryCost = document.querySelector('.cost-delyvery').textContent;
+		const duesCost = document.querySelector('.cost-dues').textContent;
 
-		console.log(sumItems);
-		console.log(delyveryCost);
-		console.log(duesCost);
+		let sumItemsInt = parseInt(sumItems);
+		let delyveryCostInt = parseInt(delyveryCost);
+		let duesCostInt = parseInt(duesCost);
 
-		let totalSum = sumItems + delyveryCost + duesCost;
+		let totalSum = sumItemsInt + delyveryCostInt + duesCostInt;
 
 		const totalSumElement = document.querySelector('.order-sum__value');
 		totalSumElement.textContent = totalSum;
