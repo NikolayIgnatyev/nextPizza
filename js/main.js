@@ -105,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		const text = this.innerText;
 		selectSelected.innerText = text;
 		this.parentElement.classList.add("select-hide");
-		console.log(123213);
 	  });
 	}
 	
@@ -121,6 +120,40 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 
 	selectItemsGroup.classList.add('select-hide');
+
+	const accordionsAll = document.querySelectorAll('.accordion');
+
+	accordionsAll.forEach(accordion => {
+		const btnAccordion = accordion.querySelector('.status-bar__open-accordion');
+
+
+		btnAccordion.addEventListener('click', () => {
+			const isOpen = accordion.classList.contains('open');
+
+
+			document.querySelectorAll('.accordion').forEach(otherAccordion => {
+				if (otherAccordion !== accordion) {
+					otherAccordion.classList.remove('open');
+					const accordionContent = otherAccordion.querySelector('.accordion-content');
+					accordionContent.style.maxHeight = 0;
+				}
+				
+	
+			});
+
+
+			const accordionContent = accordion.querySelector('.accordion-content');
+			if (isOpen) {
+				accordion.classList.remove('open');
+				accordionContent.style.maxHeight = 0;
+			} else {
+				accordion.classList.add('open');
+				accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+			}
+			
+
+		})
+	})
 
 });
 
