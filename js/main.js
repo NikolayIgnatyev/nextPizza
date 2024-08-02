@@ -1,47 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const itemsCart = document.querySelectorAll('.cart-item');
+	const itemsCart = document.querySelectorAll('.cart-item');
 
-    itemsCart.forEach(itemCart => {
-        const plusButton = itemCart.querySelector('.btn-plus');
-        const minusButton = itemCart.querySelector('.btn-minus');
-        const countElement = itemCart.querySelector('.cart-item-count');
+	itemsCart.forEach(itemCart => {
+		const plusButton = itemCart.querySelector('.btn-plus');
+		const minusButton = itemCart.querySelector('.btn-minus');
+		const countElement = itemCart.querySelector('.cart-item-count');
 		const priceElement = itemCart.querySelector('.cart-price');
 		const basePrice = parseInt(itemCart.querySelector('.item-price').getAttribute('data-base-price'));
 
 		const updatePrice = () => {
-            const count = parseInt(countElement.textContent);
-            const totalPrice = basePrice * count;
-            priceElement.textContent = totalPrice;
+			const count = parseInt(countElement.textContent);
+			const totalPrice = basePrice * count;
+			priceElement.textContent = totalPrice;
 			updateTotalSum();
-        };
+		};
 
-        plusButton.addEventListener('click', () => {
-            let value = parseInt(countElement.textContent);
+		plusButton.addEventListener('click', () => {
+			let value = parseInt(countElement.textContent);
 			countElement.textContent = value + 1;
 			updatePrice();
-			if(minusButton.classList.contains('btn-numeric-disable')){
+			if (minusButton.classList.contains('btn-numeric-disable')) {
 				minusButton.classList.remove('btn-numeric-disable');
 			}
-        });
+		});
 
-        minusButton.addEventListener('click', () => {
-            let value = parseInt(countElement.textContent);
-			if (value > 1){
+		minusButton.addEventListener('click', () => {
+			let value = parseInt(countElement.textContent);
+			if (value > 1) {
 				countElement.textContent = value - 1;
 				updatePrice();
-				if(value >= 1){
-					if(minusButton.classList.contains('btn-numeric-disable')){
+				if (value >= 1) {
+					if (minusButton.classList.contains('btn-numeric-disable')) {
 						minusButton.classList.remove('btn-numeric-disable');
 					}
 				}
 			}
-			if (value == 1){
+			if (value == 1) {
 				minusButton.classList.add('btn-numeric-disable');
 			}
-        });
-    });
+		});
+	});
 
-	
+
 
 	const updateSumOrder = () => {
 		const sumOrderElement = document.querySelector('.cost-all-items');
@@ -79,17 +79,17 @@ document.addEventListener('DOMContentLoaded', () => {
 	const selectItems = document.querySelectorAll(".select-items div");
 	const selectItemsGroup = document.querySelector(".select-items");
 
-	
-	
-	selectSelected.addEventListener("click", function() {
-		if(this.nextElementSibling.classList.contains("select-hide")){
+
+
+	selectSelected.addEventListener("click", function () {
+		if (this.nextElementSibling.classList.contains("select-hide")) {
 			selectItemsGroup.classList.add('animation-open');
 			setTimeout(() => {
 				this.nextElementSibling.classList.remove("select-hide")
 			}, 500)
-			
+
 		}
-		else{
+		else {
 			selectItemsGroup.classList.add('animation-close');
 			setTimeout(() => {
 				this.nextElementSibling.classList.add("select-hide")
@@ -97,26 +97,26 @@ document.addEventListener('DOMContentLoaded', () => {
 				selectItemsGroup.classList.remove('animation-open');
 			}, 500)
 		}
-	  
+
 	});
-	
+
 	for (const item of selectItems) {
-	  item.addEventListener("click", function() {
-		const text = this.innerText;
-		selectSelected.innerText = text;
-		this.parentElement.classList.add("select-hide");
-	  });
+		item.addEventListener("click", function () {
+			const text = this.innerText;
+			selectSelected.innerText = text;
+			this.parentElement.classList.add("select-hide");
+		});
 	}
-	
-	document.addEventListener("click", function(e) {
-	  if (!e.target.matches('.select-selected')) {
-		const dropdowns = document.getElementsByClassName("select-items");
-		for (const dropdown of dropdowns) {
-		  if (!dropdown.classList.contains('select-hide')) {
-			dropdown.classList.add('select-hide');		
-		  }
+
+	document.addEventListener("click", function (e) {
+		if (!e.target.matches('.select-selected')) {
+			const dropdowns = document.getElementsByClassName("select-items");
+			for (const dropdown of dropdowns) {
+				if (!dropdown.classList.contains('select-hide')) {
+					dropdown.classList.add('select-hide');
+				}
+			}
 		}
-	  }
 	});
 
 	selectItemsGroup.classList.add('select-hide');
@@ -146,16 +146,41 @@ document.addEventListener('DOMContentLoaded', () => {
 					const accordionContent = otherAccordion.querySelector('.accordion-content');
 					accordionContent.style.maxHeight = 0;
 				}
-				
-	
+
+
 			});
 
 
 
-			
+
 
 		})
 	})
 
+
+	const modalWindow = document.querySelector('.modal-window');
+	const btnOpenModalWindow = document.querySelector('.btn-login');
+	const btnCloseModalWindow = document.querySelector('.btn-modal-window__close');
+
+
+	window.addEventListener('click', (e) => {
+		if (modalWindow.classList.contains('open') && e.target === modalWindow) {
+			modalWindow.classList.remove('open');
+		}
+	})
+	btnCloseModalWindow.addEventListener('click', () => {
+		modalWindow.classList.remove('open');
+	})
+
+	btnOpenModalWindow.addEventListener('click', () => {
+		modalWindow.classList.add('open');
+	})
+
+
+
+
 });
+
+
+
 
