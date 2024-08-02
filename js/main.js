@@ -131,6 +131,15 @@ document.addEventListener('DOMContentLoaded', () => {
 			const isOpen = accordion.classList.contains('open');
 
 
+			const accordionContent = accordion.querySelector('.accordion-content');
+			if (isOpen) {
+				accordion.classList.remove('open');
+				accordionContent.style.maxHeight = 0;
+			} else {
+				accordion.classList.add('open');
+				accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
+			}
+
 			document.querySelectorAll('.accordion').forEach(otherAccordion => {
 				if (otherAccordion !== accordion) {
 					otherAccordion.classList.remove('open');
@@ -142,14 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			});
 
 
-			const accordionContent = accordion.querySelector('.accordion-content');
-			if (isOpen) {
-				accordion.classList.remove('open');
-				accordionContent.style.maxHeight = 0;
-			} else {
-				accordion.classList.add('open');
-				accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px';
-			}
+
 			
 
 		})

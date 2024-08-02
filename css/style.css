@@ -780,6 +780,7 @@ a {
 	border: none;
 	background: transparent;
 	cursor: pointer;
+	transition: all 0.5s ease-in;
 }
 
 .status-bar__open-accordion svg {
@@ -794,11 +795,14 @@ a {
 
 .accordion.open .accordion-content{
 	overflow: visible;
-	max-height: unset;
 }
 
 .accordion.open .accordion-header{
 	padding-bottom: 25px;
+}
+
+.accordion.open .status-bar__open-accordion{
+	transform: rotate(180deg);
 }
 
 .accordion-content-item {
