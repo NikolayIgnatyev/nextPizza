@@ -37,6 +37,11 @@ a {
 
 .modal-window.open {
 	display: flex;
+	overflow-y: hidden;
+}
+
+.lock {
+	overflow: hidden;
 }
 
 .modal-window__content {
@@ -130,7 +135,7 @@ a {
 	transition: 0.5s;
 }
 
-.modal-btn-login:hover{
+.modal-btn-login:hover {
 	background: #fff;
 	border: 1px solid #fe5f00;
 	color: #fe5f00;
@@ -810,6 +815,8 @@ a {
 }
 
 .accordion-header {
+	border: none;
+	background: transparent;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -818,6 +825,18 @@ a {
 	flex-wrap: wrap;
 	position: relative;
 	transition: all 0.5s ease-in;
+	cursor: pointer;
+}
+
+.accordion-header:hover {
+	border: none;
+	background: transparent;
+}
+
+.accordion-header:focus {
+	border: none;
+	background: transparent;
+	outline: none;
 }
 
 .border-bottom {
@@ -1003,46 +1022,47 @@ a {
 	gap: 5px;
 }
 
-@media (max-width:640px){
-	.accordion-header__status-bar{
+@media (max-width:640px) {
+	.accordion-header__status-bar {
 		width: 100%;
 		justify-content: space-between;
 	}
 
-	.accordion-content-item__info{
+	.accordion-content-item__info {
 		flex-direction: column;
 		gap: 7px;
 		align-items: flex-start;
 	}
 
-	.info-text{
+	.info-text {
 		max-width: unset;
 	}
-	.info-counts{
+
+	.info-counts {
 		width: 100%;
 		flex-direction: row-reverse;
 		justify-content: space-between;
 	}
 }
 
-@media (max-width:475px){
-	.card{
+@media (max-width:475px) {
+	.card {
 		padding: 20px 25px 25px 25px;
 	}
 
-	.title-order{
+	.title-order {
 		font-size: 18px;
 	}
 
-	.title-order-time{
+	.title-order-time {
 		font-size: 14px;
 	}
 
-	.status-text{
+	.status-text {
 		font-size: 12px;
 	}
 
-	.accordion.open .accordion-header{
+	.accordion.open .accordion-header {
 		padding-bottom: 10px;
 	}
 }

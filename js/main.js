@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const accordionsAll = document.querySelectorAll('.accordion');
 
 	accordionsAll.forEach(accordion => {
-		const btnAccordion = accordion.querySelector('.status-bar__open-accordion');
+		const btnAccordion = accordion.querySelector('.accordion-header');
 
 
 		btnAccordion.addEventListener('click', () => {
@@ -166,14 +166,17 @@ document.addEventListener('DOMContentLoaded', () => {
 	window.addEventListener('click', (e) => {
 		if (modalWindow.classList.contains('open') && e.target === modalWindow) {
 			modalWindow.classList.remove('open');
+			document.body.classList.remove('lock');
 		}
 	})
 	btnCloseModalWindow.addEventListener('click', () => {
 		modalWindow.classList.remove('open');
+		document.body.classList.remove('lock');
 	})
 
 	btnOpenModalWindow.addEventListener('click', () => {
 		modalWindow.classList.add('open');
+		document.body.classList.add('lock');
 	})
 
 
